@@ -233,3 +233,12 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 " Use PyFlakes as the Python syntax checker
 let g:syntastic_python_checkers = ['pyflakes']
+
+" Underline function useful for .rst files
+function! s:Underline(chars)
+	let chars = empty(a:chars) ? '-' : a:chars
+	let nr_columns = virtcol('$') - 1
+	let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+	put =strpart(uline, 0, nr_columns)
+endfunction
+command! -nargs=? Underline call s:Underline(<q-args>)
