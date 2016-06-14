@@ -83,7 +83,7 @@ syntax on
 " --- Plugin Specific Settings ---
 
 " --- altercation/vim-colors-solarized settings ---
-" set background=dark
+set background=dark
 
 " let g:solarized_termcolors=256
 
@@ -242,9 +242,6 @@ function! s:Underline(chars)
 	put =strpart(uline, 0, nr_columns)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
-
-" Explicitly set 256 colors in Vim
-set t_Co=256
 
 " Use zathura when not on ultrabook
 let hostname = substitute(system('hostname'), '\n', '', '')
