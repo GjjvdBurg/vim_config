@@ -245,3 +245,11 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 
 " Explicitly set 256 colors in Vim
 set t_Co=256
+
+" Use zathura when not on ultrabook
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname != "gertjan-arch"
+	let g:LatexBox_viewer = 'zathura'
+else
+	let g:LatexBox_viewer = 'evince'
+endif
