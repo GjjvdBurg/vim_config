@@ -250,3 +250,7 @@ if hostname != "gertjan-arch"
 else
 	let g:LatexBox_viewer = 'evince'
 endif
+
+" Allow asynchronous compilation (requires starting vim server, e.g.
+" vim --servername VIM)
+let g:LatexBox_latexmk_async=1
