@@ -221,7 +221,7 @@ endfunction
 " html
 autocmd Filetype html setlocal ts=2 expandtab sts=2 sw=2 fo-=t
 " matlab
-autocmd Filetype matlab setlocal ts=2 sts=2 sw=2
+autocmd Filetype matlab setlocal ts=2 expandtab sts=2 sw=2
 " python
 autocmd Filetype python setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
 
@@ -254,3 +254,9 @@ endif
 " Allow asynchronous compilation (requires starting vim server, e.g.
 " vim --servername VIM)
 let g:LatexBox_latexmk_async=1
+
+" Function for adding code statement in python code
+function! s:Code()
+	r~/.vim/python/code.txt
+endfunction
+command! Code call s:Code()
