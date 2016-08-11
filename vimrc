@@ -63,6 +63,8 @@ Plugin 'cespare/vim-toml'
 Plugin 'MatlabFilesEdition'
 " Matlab folding
 Plugin 'djoshea/vim-matlab-fold'
+" Java getter and setters
+Plugin 'pkazmier/java_getset.vim'
 
 call vundle#end()
 
