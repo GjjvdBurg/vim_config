@@ -64,6 +64,9 @@ Plugin 'MatlabFilesEdition'
 " Matlab folding
 Plugin 'djoshea/vim-matlab-fold'
 
+" background make
+Plugin 'timbertson/vim-background-make'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -224,6 +227,8 @@ autocmd Filetype html setlocal ts=2 expandtab sts=2 sw=2 fo-=t
 autocmd Filetype matlab setlocal ts=2 expandtab sts=2 sw=2
 " python
 autocmd Filetype python setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
+" java
+autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -255,8 +260,16 @@ endif
 " vim --servername VIM)
 let g:LatexBox_latexmk_async=1
 
+" Ignore some warnings
+let g:LatexBox_ignore_warnings = [
+	\ 'Latex Font Warning',
+	\ ]
+
 " Function for adding code statement in python code
 function! s:Code()
 	r~/.vim/python/code.txt
 endfunction
 command! Code call s:Code()
+
+" hide notify on successful make
+let g:background_make_notify_cmd="echo"
