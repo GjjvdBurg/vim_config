@@ -67,9 +67,6 @@ Plugin 'djoshea/vim-matlab-fold'
 " Make in background
 Plugin 'timbertson/vim-background-make'
 
-" background make
-Plugin 'timbertson/vim-background-make'
-
 call vundle#end()
 
 filetype plugin indent on
