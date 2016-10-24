@@ -1,5 +1,6 @@
 " Gotta be first
 set nocompatible
+set exrc
 
 filetype off
 
@@ -63,6 +64,8 @@ Plugin 'cespare/vim-toml'
 Plugin 'MatlabFilesEdition'
 " Matlab folding
 Plugin 'djoshea/vim-matlab-fold'
+" Make in background
+Plugin 'timbertson/vim-background-make'
 
 call vundle#end()
 
@@ -112,6 +115,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 let g:nerdtree_tabs_open_on_console_startup=0
+" Ignore certain files
+let NERDTreeIgnore = ['\.pyc$', '\.o$']
 
 " --- scrooloose/syntastic settings ---
 let g:syntastic_error_symbol = '✘'
@@ -175,7 +180,7 @@ map <c-h> <c-w>h
 " Make the 80th column stand out
 augroup vimrc_autocmds
 	autocmd BufEnter * highlight OverLength ctermbg=magenta guibg=#111111
-	let blacklist = ['html']
+	let blacklist = ['html', 'java']
 	autocmd BufEnter * if index(blacklist, &ft) < 0 | match OverLength /\%81v.*/
 augroup END
 
@@ -187,6 +192,7 @@ set list
 
 " Doxygen highlighting (dox files)
 au BufNewFile,BufRead *.dox setfiletype doxygen
+let g:DoxygenToolkit_authorName="G.J.J. van den Burg"
 
 " Maximum text width
 set textwidth=78
@@ -254,9 +260,17 @@ endif
 " Allow asynchronous compilation (requires starting vim server, e.g.
 " vim --servername VIM)
 let g:LatexBox_latexmk_async=1
+let g:LatexBox_ignore_warnings = [
+	\ 'Latex Font Warning',
+	\ ]
 
 " Function for adding code statement in python code
 function! s:Code()
 	r~/.vim/python/code.txt
 endfunction
 command! Code call s:Code()
+
+" Don't show notification on successful background make
+let g:background_make_notify_cmd="echo"
+
+set secure
