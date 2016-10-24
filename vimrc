@@ -67,6 +67,9 @@ Plugin 'djoshea/vim-matlab-fold'
 " Make in background
 Plugin 'timbertson/vim-background-make'
 
+" background make
+Plugin 'timbertson/vim-background-make'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -230,6 +233,8 @@ autocmd Filetype html setlocal ts=2 expandtab sts=2 sw=2 fo-=t
 autocmd Filetype matlab setlocal ts=2 expandtab sts=2 sw=2
 " python
 autocmd Filetype python setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
+" java
+autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -260,6 +265,11 @@ endif
 " Allow asynchronous compilation (requires starting vim server, e.g.
 " vim --servername VIM)
 let g:LatexBox_latexmk_async=1
+let g:LatexBox_ignore_warnings = [
+	\ 'Latex Font Warning',
+	\ ]
+
+" Ignore some warnings
 let g:LatexBox_ignore_warnings = [
 	\ 'Latex Font Warning',
 	\ ]
