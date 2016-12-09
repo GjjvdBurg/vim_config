@@ -67,6 +67,9 @@ Plugin 'djoshea/vim-matlab-fold'
 " Make in background
 Plugin 'timbertson/vim-background-make'
 
+" Vim for writing
+Plugin 'mikewest/vimroom'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -180,7 +183,7 @@ map <c-h> <c-w>h
 " Make the 80th column stand out
 augroup vimrc_autocmds
 	autocmd BufEnter * highlight OverLength ctermbg=magenta guibg=#111111
-	let blacklist = ['html', 'java']
+	let blacklist = ['html', 'java', 'scss', 'css']
 	autocmd BufEnter * if index(blacklist, &ft) < 0 | match OverLength /\%81v.*/
 augroup END
 
@@ -209,8 +212,8 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 " Highlight matches when jumping to next
-nnoremap <silent> n 	n:call HLNext(0.4)<cr>
-nnoremap <silent> N 	N:call HLNext(0.4)<cr>
+nnoremap <silent> n 	n:call HLNext(0.1)<cr>
+nnoremap <silent> N 	N:call HLNext(0.1)<cr>
 
 function! HLNext (blinktime)
 	highlight WhiteOnRed ctermfg=white ctermbg=red
@@ -232,6 +235,8 @@ autocmd Filetype matlab setlocal ts=2 expandtab sts=2 sw=2
 autocmd Filetype python setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
 " java
 autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
+" markdown
+autocmd Filetype markdown setlocal ai
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
