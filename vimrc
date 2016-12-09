@@ -236,7 +236,7 @@ autocmd Filetype python setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab s
 " java
 autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
 " markdown
-autocmd Filetype markdown setlocal ai
+autocmd Filetype markdown setlocal ai expandtab
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
