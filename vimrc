@@ -293,6 +293,7 @@ function! s:Myroom()
 	set noshowcmd
 	set listchars=
 	hi ExtraWhitespace ctermbg=black
+	hi OverLength ctermbg=black
 endfunction
 command! Myroom call s:Myroom()
 
