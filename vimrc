@@ -285,4 +285,15 @@ command! Code call s:Code()
 " Don't show notification on successful background make
 let g:background_make_notify_cmd="echo"
 
+function! s:Myroom()
+	hi EndOfBuffer ctermfg=black ctermbg=black
+	hi link markdownError Normal
+	set noruler
+	set statusline=\ 
+	set noshowcmd
+	set listchars=
+	hi ExtraWhitespace ctermbg=black
+endfunction
+command! Myroom call s:Myroom()
+
 set secure
