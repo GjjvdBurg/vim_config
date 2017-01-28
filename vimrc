@@ -287,6 +287,9 @@ command! Code call s:Code()
 " Don't show notification on successful background make
 let g:background_make_notify_cmd="echo"
 
+" set the vimroom width just one larger
+let g:vimroom_width = 81
+
 function! s:Myroom()
 	hi EndOfBuffer ctermfg=black ctermbg=black
 	hi link markdownError Normal
