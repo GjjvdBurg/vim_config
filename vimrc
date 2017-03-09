@@ -238,7 +238,7 @@ autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab sof
 " markdown
 autocmd Filetype markdown setlocal ai expandtab
 " R
-autocmd Filetype r setlocal fo+=r
+autocmd Filetype r setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent fo+=r cc=80
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
