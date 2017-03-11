@@ -70,6 +70,10 @@ Plugin 'timbertson/vim-background-make'
 " Vim for writing
 Plugin 'mikewest/vimroom'
 
+" SnipMate
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -120,6 +124,8 @@ nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=0
 " Ignore certain files
 let NERDTreeIgnore = ['\.pyc$', '\.o$']
+" Fix for Gvim
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " --- scrooloose/syntastic settings ---
 let g:syntastic_error_symbol = '✘'
@@ -239,6 +245,8 @@ autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab sof
 autocmd Filetype markdown setlocal ai expandtab
 " R
 autocmd Filetype r setlocal fo+=r
+" ruby
+autocmd Filetype ruby setlocal ts=2 shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround autoindent
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -300,3 +308,9 @@ endfunction
 command! Myroom call s:Myroom()
 
 set secure
+
+" UltiSnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
