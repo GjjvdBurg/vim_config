@@ -317,3 +317,15 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" map :W to :w and :Q to :q
+command! -bang -range=% -complete=file -nargs=* W <line1>,<line2>write<bang> <args>
+command! -bang Q quit<bang>
+
+" Strip double spaces from eol in markdown
+function! <SID>StripTrailingWhitespaces()
+	let l = line(".")
+	let c = col(".")
+	%s/\s\s\+$/\ /e
+	call cursor(l, c)
+endfun
+autocmd BufWritePre *.md :call <SID>StripTrailingWhitespaces()
