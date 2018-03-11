@@ -69,6 +69,9 @@ Plugin 'timbertson/vim-background-make'
 
 " Vim for writing
 Plugin 'mikewest/vimroom'
+Plugin 'junegunn/goyo.vim'
+
+Plugin 'tpope/vim-surround'
 
 " SnipMate
 Plugin 'SirVer/ultisnips'
@@ -130,6 +133,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 " --- scrooloose/syntastic settings ---
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = '▲'
+let g:syntastic_disabled_filetypes = ['java']
 augroup mySyntastic
 	au!
 	au FileType tex let b:syntastic_mode = 'passive'
@@ -296,7 +300,7 @@ command! Code call s:Code()
 let g:background_make_notify_cmd="echo"
 
 " set the vimroom width just one larger
-let g:vimroom_width = 81
+let g:vimroom_width = 82
 
 function! s:Myroom()
 	hi EndOfBuffer ctermfg=black ctermbg=black
