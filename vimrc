@@ -77,6 +77,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+" Ledger
+Plugin 'ledger/vim-ledger'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -189,13 +192,6 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
-" Make the 80th column stand out
-augroup vimrc_autocmds
-	autocmd BufEnter * highlight OverLength ctermbg=magenta guibg=#111111
-	let blacklist = ['html', 'java', 'scss', 'css']
-	autocmd BufEnter * if index(blacklist, &ft) < 0 | match OverLength /\%81v.*/
-augroup END
 
 " Show annoying whitespace. Because we don't want to highlight tab characters,
 " we use two U+2002 characters here. You can add these with Ctrl+V u 2 0 0 2
