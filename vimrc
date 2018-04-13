@@ -68,7 +68,6 @@ Plugin 'djoshea/vim-matlab-fold'
 Plugin 'timbertson/vim-background-make'
 
 " Vim for writing
-Plugin 'mikewest/vimroom'
 Plugin 'junegunn/goyo.vim'
 
 Plugin 'tpope/vim-surround'
@@ -294,21 +293,6 @@ command! Code call s:Code()
 
 " Don't show notification on successful background make
 let g:background_make_notify_cmd="echo"
-
-" set the vimroom width just one larger
-let g:vimroom_width = 82
-
-function! s:Myroom()
-	hi EndOfBuffer ctermfg=black ctermbg=black
-	hi link markdownError Normal
-	set noruler
-	set statusline=\ 
-	set noshowcmd
-	set listchars=
-	hi ExtraWhitespace ctermbg=black
-	hi OverLength ctermbg=black
-endfunction
-command! Myroom call s:Myroom()
 
 set secure
 
