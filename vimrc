@@ -32,6 +32,7 @@ Plugin 'tkztmk/vim-vala'
 
 " -- LaTeX Plugins ---
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'gerw/vim-tex-syntax'
 " Plugin 'lervag/vimtex'
 
 " --- Extras/Advanced plugins ---
@@ -168,6 +169,9 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" Disable better whitespace for tex files
+let g:better_whitespace_filetypes_blacklist=['tex', 'r', 'markdown']
+
 " Show annoying whitespace. Because we don't want to highlight tab characters,
 " we use two U+2002 characters here. You can add these with Ctrl+V u 2 0 0 2
 " (no spaces).
@@ -222,6 +226,10 @@ autocmd Filetype markdown setlocal ai expandtab
 autocmd Filetype r setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent fo+=r cc=80
 " ruby
 autocmd Filetype ruby setlocal ts=2 shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround autoindent
+" tex
+autocmd Filetype tex setlocal nolist
+" bib
+autocmd Filetype bib setlocal nospell fo-=t
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -241,6 +249,12 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 
+" #####################
+" #                   #
+" # LATEXBOX SETTINGS #
+" #                   #
+" #####################
+
 " Use zathura when not on ultrabook
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname != "gertjan-arch"
@@ -254,12 +268,10 @@ endif
 let g:LatexBox_latexmk_async=1
 let g:LatexBox_ignore_warnings = [
 	\ 'Latex Font Warning',
+	\ 'Underfull',
+	\ 'Overfull',
 	\ ]
-
-" Ignore some warnings
-let g:LatexBox_ignore_warnings = [
-	\ 'Latex Font Warning',
-	\ ]
+let g:LatexBox_Folding=1
 
 " Function for adding code statement in python code
 function! s:Code()
