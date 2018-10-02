@@ -19,7 +19,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
@@ -28,17 +27,7 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
-" --- Other text editing features ---
-" Plugin 'Raimondi/delimitMate'
-
-" --- man pages, tmux ---
-"lugin 'jez/vim-superman'
-"Plugin 'christoomey/vim-tmux-navigator'
-
 " --- Syntax plugins ---
-" Plugin 'jez/vim-c0'
-" Plugin 'jez/vim-ispc'
-" Plugin 'kchmck/vim-coffee-script'
 Plugin 'tkztmk/vim-vala'
 
 " -- LaTeX Plugins ---
@@ -58,8 +47,6 @@ Plugin 'ervandew/supertab'
 Plugin 'aymanim/DoxygenToolkit.vim'
 " TOML
 Plugin 'cespare/vim-toml'
-" Todo
-" Plugin 'vitalk/vim-simple-todo'
 " Matlab
 Plugin 'MatlabFilesEdition'
 " Matlab folding
@@ -68,9 +55,7 @@ Plugin 'djoshea/vim-matlab-fold'
 Plugin 'timbertson/vim-background-make'
 
 " Vim for writing
-Plugin 'mikewest/vimroom'
 Plugin 'junegunn/goyo.vim'
-
 Plugin 'tpope/vim-surround'
 
 " SnipMate
@@ -164,16 +149,6 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 hi clear SignColumn
 " In vim-airline, only display "hunks" if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only=1
-
-" --- Raimondi/delimitMate settings ---
-" let delimitMate_expand_cr = 1
-" augroup mydelimitMate
-	" au!
-	" au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-	" au FileType tex let b:delimitMate_quotes = ""
-	" au FileType tex let b:delimitMate_matchpais = "(:),[:],{:},`:'"
-	" au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-" augroup END
 
 " --- jez/vim-superman settings ---
 " better man page support
@@ -294,21 +269,6 @@ command! Code call s:Code()
 
 " Don't show notification on successful background make
 let g:background_make_notify_cmd="echo"
-
-" set the vimroom width just one larger
-let g:vimroom_width = 82
-
-function! s:Myroom()
-	hi EndOfBuffer ctermfg=black ctermbg=black
-	hi link markdownError Normal
-	set noruler
-	set statusline=\ 
-	set noshowcmd
-	set listchars=
-	hi ExtraWhitespace ctermbg=black
-	hi OverLength ctermbg=black
-endfunction
-command! Myroom call s:Myroom()
 
 set secure
 
