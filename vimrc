@@ -70,6 +70,9 @@ Plugin 'ledger/vim-ledger'
 " Tables
 Plugin 'dhruvasagar/vim-table-mode'
 
+" YUNOcommit
+Plugin 'esneider/YUNOcommit.vim'
+
 call vundle#end()
 
 filetype plugin indent on
