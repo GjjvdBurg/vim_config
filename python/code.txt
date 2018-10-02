@@ -1,2 +1,3 @@
     import code
+    from pprint import pprint
     code.interact(local=dict(globals(), **locals()))
