@@ -230,6 +230,10 @@ autocmd Filetype markdown setlocal ai expandtab
 autocmd Filetype r setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent fo+=r cc=80
 " ruby
 autocmd Filetype ruby setlocal ts=2 shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround autoindent
+" yaml
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
+" lua
+autocmd Filetype lua setlocal ts=3 sts=3 sw=3 expandtab
 " tex
 autocmd Filetype tex setlocal nolist
 " bib
