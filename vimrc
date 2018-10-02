@@ -66,6 +66,9 @@ Plugin 'honza/vim-snippets'
 " Ledger
 Plugin 'ledger/vim-ledger'
 
+" Tables
+Plugin 'dhruvasagar/vim-table-mode'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -301,3 +304,7 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfun
 autocmd BufWritePre *.md :call <SID>StripTrailingWhitespaces()
+
+" Table Mode settings
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
