@@ -29,6 +29,7 @@ Plugin 'tpope/vim-fugitive'
 
 " --- Syntax plugins ---
 Plugin 'tkztmk/vim-vala'
+Plugin 'ambv/black'
 
 " -- LaTeX Plugins ---
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -304,6 +305,10 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfun
 autocmd BufWritePre *.md :call <SID>StripTrailingWhitespaces()
+
+" Black settings
+let g:black_linelength = 80
+autocmd BufWritePost *.py execute ':Black'
 
 " Table Mode settings
 let g:table_mode_corner_corner='+'
