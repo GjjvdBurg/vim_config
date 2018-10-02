@@ -93,10 +93,6 @@ set background=dark
 
 " let g:solarized_termcolors=256
 
-" Set the colorscheme
-" colorscheme solarized
-
-
 " --- bling/vim-airline settings ---
 " Always show statusbar
 set laststatus=2
