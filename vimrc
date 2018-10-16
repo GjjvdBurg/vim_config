@@ -311,7 +311,14 @@ autocmd BufWritePre *.md :call <SID>StripTrailingWhitespaces()
 
 " Black settings
 let g:black_linelength = 80
-autocmd BufWritePost *.py execute ':Black'
+let g:black_on_save = 1
+function! s:MyBlack()
+	if g:black_on_save == 1
+		execute ':Black'
+	endif
+endfunction
+command! MyBlack call s:MyBlack()
+autocmd BufWritePost *.py execute ':MyBlack'
 
 " Table Mode settings
 let g:table_mode_corner_corner='+'
