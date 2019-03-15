@@ -310,7 +310,7 @@ endfun
 autocmd BufWritePre *.md :call <SID>StripTrailingWhitespaces()
 
 " Black settings
-let g:black_linelength = 80
+let g:black_linelength = 79 " PEP8 recommends 79
 let g:black_on_save = 1
 function! s:MyBlack()
 	if g:black_on_save == 1
