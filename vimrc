@@ -286,6 +286,13 @@ function! s:Code()
 endfunction
 command! Code call s:Code()
 
+" Function for adding coding line to python code
+function! s:coding()
+	execute 'normal i' . '# -*- coding: utf-8 -*-'
+	execute 'normal o'
+endfunction
+command! Enc call s:coding()
+
 " Don't show notification on successful background make
 let g:background_make_notify_cmd="echo"
 
