@@ -73,6 +73,9 @@ Plugin 'dhruvasagar/vim-table-mode'
 " YUNOcommit
 Plugin 'esneider/YUNOcommit.vim'
 
+" Better python highlighting
+Plugin 'hdima/python-syntax'
+
 call vundle#end()
 
 filetype plugin indent on
