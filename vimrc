@@ -220,6 +220,7 @@ endfunction
 
 " html
 autocmd Filetype html setlocal ts=2 expandtab sts=2 sw=2 fo-=t
+autocmd Filetype htmldjango setlocal ts=2 expandtab sts=2 sw=2 fo-=t
 " matlab
 autocmd Filetype matlab setlocal ts=2 expandtab sts=2 sw=2
 " python
