@@ -283,6 +283,8 @@ let g:LatexBox_ignore_warnings = [
 	\ ]
 let g:LatexBox_Folding=1
 
+" ##### END LATEXBOX SETTINGS #####
+
 " Function for adding code statement in python code
 function! s:Code()
 	r~/.vim/python/code.txt
