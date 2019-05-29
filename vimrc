@@ -265,12 +265,11 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 " #                   #
 " #####################
 
-" Use zathura when not on ultrabook
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname != "gertjan-arch"
-	let g:LatexBox_viewer = 'zathura'
-else
+" Choose pdf viewer based on desktop environment
+if $GDMSESSION == 'gnome'
 	let g:LatexBox_viewer = 'evince'
+else
+	let g:LatexBox_viewer = 'zathura'
 endif
 
 " Allow asynchronous compilation (requires starting vim server, e.g.
