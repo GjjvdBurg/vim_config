@@ -74,7 +74,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'esneider/YUNOcommit.vim'
 
 " Better python highlighting
-Plugin 'hdima/python-syntax'
+Plugin 'vim-python/python-syntax'
 
 call vundle#end()
 
@@ -335,3 +335,6 @@ autocmd BufWritePost *.py execute ':MyBlack'
 " Table Mode settings
 let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
+
+" Python syntax highlighting
+let python_highlight_all = 1
