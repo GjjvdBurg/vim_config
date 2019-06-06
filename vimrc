@@ -55,6 +55,8 @@ Plugin 'MatlabFilesEdition'
 Plugin 'djoshea/vim-matlab-fold'
 " Make in background
 Plugin 'timbertson/vim-background-make'
+" Javascript
+Plugin 'pangloss/vim-javascript'
 
 " Vim for writing
 Plugin 'junegunn/goyo.vim'
