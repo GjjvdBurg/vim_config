@@ -55,6 +55,8 @@ Plugin 'MatlabFilesEdition'
 Plugin 'djoshea/vim-matlab-fold'
 " Make in background
 Plugin 'timbertson/vim-background-make'
+" Javascript
+Plugin 'pangloss/vim-javascript'
 
 " Vim for writing
 Plugin 'junegunn/goyo.vim'
@@ -72,6 +74,9 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 " YUNOcommit
 Plugin 'esneider/YUNOcommit.vim'
+
+" Better python highlighting
+Plugin 'vim-python/python-syntax'
 
 call vundle#end()
 
@@ -217,6 +222,7 @@ endfunction
 
 " html
 autocmd Filetype html setlocal ts=2 expandtab sts=2 sw=2 fo-=t
+autocmd Filetype htmldjango setlocal ts=2 expandtab sts=2 sw=2 fo-=t cc=80
 " matlab
 autocmd Filetype matlab setlocal ts=2 expandtab sts=2 sw=2
 " python
@@ -262,12 +268,11 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 " #                   #
 " #####################
 
-" Use zathura when not on ultrabook
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname != "gertjan-arch"
-	let g:LatexBox_viewer = 'zathura'
-else
+" Choose pdf viewer based on desktop environment
+if $GDMSESSION == 'gnome'
 	let g:LatexBox_viewer = 'evince'
+else
+	let g:LatexBox_viewer = 'zathura'
 endif
 
 " Allow asynchronous compilation (requires starting vim server, e.g.
@@ -279,6 +284,8 @@ let g:LatexBox_ignore_warnings = [
 	\ 'Overfull',
 	\ ]
 let g:LatexBox_Folding=1
+
+" ##### END LATEXBOX SETTINGS #####
 
 " Function for adding code statement in python code
 function! s:Code()
@@ -335,3 +342,6 @@ let g:table_mode_header_fillchar='='
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<tab>'
+
+" Python syntax highlighting
+let python_highlight_all = 1
