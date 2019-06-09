@@ -330,3 +330,8 @@ autocmd BufWritePost *.py execute ':MyBlack'
 " Table Mode settings
 let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<tab>'
