@@ -80,6 +80,9 @@ Plugin 'esneider/YUNOcommit.vim'
 " Better python highlighting
 Plugin 'vim-python/python-syntax'
 
+" Blocking text
+Plugin 'sk1418/blockit'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -348,3 +351,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<tab>'
 
 " Python syntax highlighting
 let python_highlight_all = 1
+
+" BlockIt settings
+" We'll mostly use this for Python and Makefiles
+let g:blockit_H_char='#'
+let g:blockit_V_char='#'
+let g:blockit_align='c'
