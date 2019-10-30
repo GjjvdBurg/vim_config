@@ -271,7 +271,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 " #####################
 
 " Choose pdf viewer based on desktop environment
-if $GDMSESSION == 'gnome'
+if ($GDMSESSION == 'gnome' || $GDMSESSION == 'gnome-xorg')
 	let g:LatexBox_viewer = 'evince'
 else
 	let g:LatexBox_viewer = 'zathura'
@@ -340,6 +340,11 @@ autocmd BufWritePost *.py execute ':MyBlack'
 " Table Mode settings
 let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<tab>'
 
 " Python syntax highlighting
 let python_highlight_all = 1
