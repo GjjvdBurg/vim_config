@@ -284,6 +284,7 @@ let g:LatexBox_ignore_warnings = [
 	\ 'Latex Font Warning',
 	\ 'Underfull',
 	\ 'Overfull',
+	\ 'contains only floats',
 	\ ]
 let g:LatexBox_Folding=1
 
