@@ -57,6 +57,8 @@ Plugin 'djoshea/vim-matlab-fold'
 Plugin 'timbertson/vim-background-make'
 " Javascript
 Plugin 'pangloss/vim-javascript'
+" Stan
+Plugin 'maverickg/stan.vim'
 
 " Vim for writing
 Plugin 'junegunn/goyo.vim'
