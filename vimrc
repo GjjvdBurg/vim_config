@@ -357,3 +357,11 @@ let python_highlight_all = 1
 let g:blockit_H_char='#'
 let g:blockit_V_char='#'
 let g:blockit_align='c'
+
+" Highlight specific keywords in comments
+augroup vimrc_todo
+	au!
+	au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|XXX)/
+		\ containedin=.*Comment,vimCommentTitle
+augroup END
+hi def link MyTodo Todo
