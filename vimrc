@@ -290,6 +290,7 @@ let g:LatexBox_ignore_warnings = [
 	\ 'contains only floats',
 	\ ]
 let g:LatexBox_Folding=1
+let g:LatexBox_latexmk_options = "-shell-escape"
 
 " ##### END LATEXBOX SETTINGS #####
 
