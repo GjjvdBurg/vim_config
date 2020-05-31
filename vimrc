@@ -275,7 +275,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 
 " Choose pdf viewer based on desktop environment
 if ($GDMSESSION == 'gnome' || $GDMSESSION == 'gnome-xorg')
-	let g:LatexBox_viewer = 'evince'
+	let g:LatexBox_viewer = 'zathura'
 else
 	let g:LatexBox_viewer = 'zathura'
 endif
