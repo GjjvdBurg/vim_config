@@ -30,6 +30,7 @@ Plugin 'tpope/vim-fugitive'
 " --- Syntax plugins ---
 Plugin 'tkztmk/vim-vala'
 Plugin 'ambv/black'
+Plugin 'dense-analysis/ale'
 
 " -- LaTeX Plugins ---
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -39,7 +40,7 @@ Plugin 'gerw/vim-tex-syntax'
 " --- Extras/Advanced plugins ---
 " Highlight and strip trailing whitespace
 Plugin 'ntpeters/vim-better-whitespace'
-" Align csv files at commans, align Markdown tables, and more
+" Align csv files at commas, align Markdown tables, and more
 Plugin 'godlygeek/tabular'
 " Automatically insert the closing html tag
 Plugin 'HTML-AutoCloseTag'
@@ -82,6 +83,12 @@ Plugin 'vim-python/python-syntax'
 
 " Blocking text
 Plugin 'sk1418/blockit'
+
+" TitleCase
+Plugin 'christoomey/vim-titlecase'
+
+" VimWiki
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 
@@ -205,7 +212,7 @@ set cinkeys-=0#
 set formatoptions+=aw
 
 " Tab completion
-au FileType python set omnifunc=pythoncomplete#Complete
+au FileType python set omnifunc=python3complete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
@@ -235,9 +242,9 @@ autocmd Filetype python setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab s
 " java
 autocmd Filetype java setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent
 " markdown
-autocmd Filetype markdown setlocal ai expandtab
+autocmd Filetype markdown setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 " R
-autocmd Filetype r setlocal textwidth=79 shiftwidth=4 tabstop=4 expandtab softtabstop=4 shiftround autoindent fo+=r cc=80
+autocmd Filetype r setlocal textwidth=79 shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround autoindent fo+=r cc=80
 " ruby
 autocmd Filetype ruby setlocal ts=2 shiftwidth=2 tabstop=2 expandtab softtabstop=2 shiftround autoindent
 " yaml
@@ -248,6 +255,8 @@ autocmd Filetype lua setlocal ts=3 sts=3 sw=3 expandtab
 autocmd Filetype tex setlocal nolist
 " bib
 autocmd Filetype bib setlocal nospell fo-=t
+" make
+autocmd Filetype make setlocal cc=80
 
 " Vim diff colors
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -257,6 +266,17 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 " Use PyFlakes as the Python syntax checker
 let g:syntastic_python_checkers = ['pyflakes']
+
+" Use lintr as the R syntax checker
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_r_checkers = ['lintr']
+let g:ale_linters_explicit = 1
+let g:ale_linters = {}
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'r': ['styler']}
 
 " Underline function useful for .rst files
 function! s:Underline(chars)
@@ -366,3 +386,9 @@ augroup vimrc_todo
 		\ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link MyTodo Todo
+
+" Disable titlecase default mapping
+let g:titlecase_map_keys = 0
+
+" VimWiki configuration
+let g:vimwiki_list = [{'path': '~/share/both/zettelkasten', 'syntax': 'markdown', 'ext': '.md', 'links_space_char': '_'}]
