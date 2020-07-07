@@ -390,4 +390,5 @@ hi def link MyTodo Todo
 let g:titlecase_map_keys = 0
 
 " VimWiki configuration
+let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/share/both/zettelkasten', 'syntax': 'markdown', 'ext': '.md', 'links_space_char': '_'}]
