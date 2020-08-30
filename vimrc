@@ -30,7 +30,7 @@ Plugin 'tpope/vim-fugitive'
 " --- Syntax plugins ---
 Plugin 'tkztmk/vim-vala'
 Plugin 'ambv/black'
-Plugin 'dense-analysis/ale'
+" Plugin 'dense-analysis/ale'
 
 " -- LaTeX Plugins ---
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -270,13 +270,13 @@ let g:syntastic_python_checkers = ['pyflakes']
 " Use lintr as the R syntax checker
 let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_r_checkers = ['lintr']
-let g:ale_linters_explicit = 1
-let g:ale_linters = {}
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {'r': ['styler']}
+"let g:ale_linters_explicit = 1
+"let g:ale_linters = {}
+"let g:ale_lint_on_text_changed = 'never'
+""let g:ale_lint_on_insert_leave = 0
+"let g:ale_lint_on_enter = 0
+"let g:ale_fix_on_save = 1
+"let g:ale_fixers = {'r': ['styler']}
 
 " Underline function useful for .rst files
 function! s:Underline(chars)
