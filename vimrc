@@ -367,8 +367,8 @@ let g:table_mode_header_fillchar='='
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<tab>'
 
 " Python syntax highlighting
 let python_highlight_all = 1
