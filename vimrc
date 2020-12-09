@@ -47,7 +47,7 @@ Plugin 'HTML-AutoCloseTag'
 " SuperTab
 Plugin 'ervandew/supertab'
 " Doxygen
-Plugin 'aymanim/DoxygenToolkit.vim'
+Plugin 'GjjvdBurg/DoxygenToolkit.vim'
 " TOML
 Plugin 'cespare/vim-toml'
 " Matlab
