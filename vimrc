@@ -385,7 +385,7 @@ let g:blockit_align='c'
 " Highlight specific keywords in comments
 augroup vimrc_todo
 	au!
-	au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|XXX)/
+	au Syntax * syn match MyTodo /\v\C<(FIXME|NOTE|TODO|XXX)/
 		\ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link MyTodo Todo
