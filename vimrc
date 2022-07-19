@@ -90,6 +90,9 @@ Plugin 'christoomey/vim-titlecase'
 " VimWiki
 Plugin 'vimwiki/vimwiki'
 
+" StringWrap
+Plugin 'gjjvdburg/StringWrap.vim'
+
 call vundle#end()
 
 filetype plugin indent on
