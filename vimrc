@@ -17,7 +17,7 @@ Plugin 'bling/vim-airline'
 " --- Vim as a programmer's text editor ---
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/syntastic'
+Plugin 'gjjvdburg/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
@@ -272,7 +272,8 @@ highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " Use PyFlakes as the Python syntax checker
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['ruff']
+let g:syntastic_python_ruff_args = "check --select F,E,W,C90,N,PL,RUF"
 
 " Use lintr as the R syntax checker
 let g:syntastic_enable_r_lintr_checker = 1
