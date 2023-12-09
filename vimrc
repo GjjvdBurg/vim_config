@@ -95,6 +95,10 @@ Plugin 'vimwiki/vimwiki'
 " StringWrap
 Plugin 'gjjvdburg/StringWrap.vim'
 
+" FZF
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim' " need both
+
 call vundle#end()
 
 filetype plugin indent on
@@ -402,3 +406,11 @@ let g:titlecase_map_keys = 0
 " VimWiki configuration
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/share/both/zettelkasten', 'syntax': 'markdown', 'ext': '.md', 'links_space_char': '_'}]
+
+" FZF file search mapping (with fzf)
+" NOTE: GFiles follows .gitignore, it's a quick way to exclude things in 
+" search, pending a better solution
+nmap <silent> <leader>f :GFiles<CR>
+
+" FZF content search mapping (with the_silver_searcher)
+nmap <silent> <leader>a :Ag<CR>
