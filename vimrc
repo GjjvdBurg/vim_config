@@ -277,7 +277,7 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 " Use PyFlakes as the Python syntax checker
 let g:syntastic_python_checkers = ['ruff']
-let g:syntastic_python_ruff_args = "check --select F,E,W,C90,N,PL,RUF"
+let g:syntastic_python_ruff_args = "check --select F,E,W,C90,N,PL,RUF,ARG,RET,PIE,INP,ANN"
 
 " Use shellcheck as the Shell syntax checker
 let g:syntastic_sh_checkers = ['shellcheck']
